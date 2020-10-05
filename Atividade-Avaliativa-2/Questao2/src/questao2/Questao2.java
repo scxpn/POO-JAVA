@@ -1,21 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package questao2;
 
-/**
- *
- * @author ubira
- */
+import java.util.Scanner;
+
 public class Questao2 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        int loop = 0;
+        
+        ContaDeBanco conta = new ContaDeBanco();
+        
+        Scanner input = new Scanner(System.in);
+        
+        while (loop != 6) {
+            conta.menu();
+            loop = input.nextInt();
+            
+            switch (loop) {
+                case 1:
+                    conta.cadastro();
+                case 2:
+                    
+                case 3:
+                    
+                case 4:
+                    
+                case 5:
+                    
+                default:
+                    
+            }
+        }
     }
     
 }
