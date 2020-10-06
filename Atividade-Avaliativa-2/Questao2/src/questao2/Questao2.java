@@ -28,6 +28,7 @@ public class Questao2 {
                 case 4:
                     conta.consultaS();
                 case 5:
+                    conta.consultaD();
                     break;
                 case 6:
                     loop = 6;

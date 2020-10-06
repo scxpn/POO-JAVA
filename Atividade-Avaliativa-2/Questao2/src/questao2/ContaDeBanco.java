@@ -91,7 +91,6 @@ public class ContaDeBanco {
        setNome(input.next());
        System.out.println("Informe seu sobrenome: ");
        setSobrenome(input.next());
-       space();
        layout();
        System.out.println("Para facilitarmos seu acesso, usamos o sistema em que o seu CPF é seu numero da conta.");
        space();
@@ -139,6 +138,7 @@ public class ContaDeBanco {
            case 2:
                System.out.println("Informe o valor do saque: R$");
                saque = input.nextFloat();
+               space();
                if(getSaldoCP() > saque){
                    setSaldoCC(getSaldoCP() - saque);
                    System.out.println("Saque realizado com sucesso!");
@@ -166,6 +166,7 @@ public class ContaDeBanco {
            case 1:
                System.out.println("Informe o valor do deposito: R$");
                deposito = input.nextFloat();
+               space();
                setSaldoCC(getSaldoCC() + deposito);
                System.out.println("Seu saldo agora é de R$" + getSaldoCC());
                break;
@@ -173,6 +174,7 @@ public class ContaDeBanco {
            case 2:
                System.out.println("Informe o valor do deposito: R$");
                deposito = input.nextFloat();
+               space();
                setSaldoCP(getSaldoCP() + deposito);
                System.out.println("Seu saldo agora é de R$" + getSaldoCP());
                break;
@@ -182,12 +184,13 @@ public class ContaDeBanco {
        space();
    }
    
-   public void consultaS(){
+   public void consultaS(){ //Consulta de Saldo
        space();
        layout();
        System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\n3 - Todas as contas\nEscolha de qual conta você quer o saldo: ");
        setTipoConta(input.nextInt());
        space();
+       layout();
        
        switch(getTipoConta()){
            case 1:
@@ -203,5 +206,15 @@ public class ContaDeBanco {
                System.out.println("Seu saldo atual na Conta Corrente é de: "+getSaldoCP());
                break;
        }
+       space();
+       space();
+   }
+   
+   public void consultaD(){ //Consulta de Dados
+       layout();
+       System.out.println("Olá "+ getNome() + "" + getSobrenome());
+       System.out.println("Esses são seus dados bancários: ");
+       System.out.println("Conta de número: "+ getNumeroConta());
+       System.out.println("Você possui duas contas:\nConta Corrente com saldo de: R$"+ getSaldoCC() + "\nConta Corrente com saldo de: R$"+ getSaldoCP());
    }
 }
