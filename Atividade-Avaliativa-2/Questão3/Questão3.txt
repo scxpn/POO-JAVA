@@ -1,0 +1,17 @@
+Array é o nome dado a uma "variavel composta" 
+que tambem podemos apelidar de "vetor de vetores" pois agora podendo
+conter em sua estrutura linhas e colunas,
+contendo elementos do mesmo tipo, ordenados por
+meio de posições numericas e alocados em um bloco contíguo de memória.
+
+temos dois exemplos de Variaveis compostas que são
+Unidimencionais e multidimencionais
+são eles:
+
+Unidimencionais: São os conhecidos como "vetores", 
+Os vetores são alocações pre estabelecidas para armazenar em forma de linha
+dados homogêneos e ordenalos atravez de posição numericas nesse vetor, exemplo: Questão_3
+
+Multidimencionais: São conhecidas como "Matrizes",
+As matrizes recebem os mesmo atributos dos vetores porem com a estrutura contada entre
+linhas e colunas, exemplo: Questão_3.1
