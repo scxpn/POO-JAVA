@@ -94,7 +94,7 @@ public class ContaDeBanco {
        layout();
        System.out.println("Para facilitarmos seu acesso, usamos o sistema em que o seu CPF é seu numero da conta.");
        space();
-       System.out.println("Informe seu cpf: ");
+       System.out.println("Informe seu CPF: ");
        setNumeroConta(input.next());
        space();
        layout();
@@ -112,7 +112,7 @@ public class ContaDeBanco {
    public void saque(){
        space();
        layout();
-       System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\nEscolha de qual conta quer fazer o saque:");
+       System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\n\nEscolha de qual conta quer fazer o saque:");
        setTipoConta(input.nextInt());
        space();
        
@@ -158,7 +158,7 @@ public class ContaDeBanco {
    public void deposito(){
        space();
        layout();
-       System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\nEscolha em qual conta quer fazer o deposito:");
+       System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\n\nEscolha em qual conta quer fazer o deposito:");
        setTipoConta(input.nextInt());
        space();
        
@@ -187,10 +187,9 @@ public class ContaDeBanco {
    public void consultaS(){ //Consulta de Saldo
        space();
        layout();
-       System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\n3 - Todas as contas\nEscolha de qual conta você quer o saldo: ");
+       System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\n3 - Todas as contas\n\nEscolha de qual conta você quer o saldo: ");
        setTipoConta(input.nextInt());
        space();
-       layout();
        
        switch(getTipoConta()){
            case 1:
@@ -212,9 +211,13 @@ public class ContaDeBanco {
    
    public void consultaD(){ //Consulta de Dados
        layout();
-       System.out.println("Olá "+ getNome() + "" + getSobrenome());
+       System.out.println("Olá "+ getNome() + " " + getSobrenome()+ ".");
+       space();
        System.out.println("Esses são seus dados bancários: ");
        System.out.println("Conta de número: "+ getNumeroConta());
-       System.out.println("Você possui duas contas:\nConta Corrente com saldo de: R$"+ getSaldoCC() + "\nConta Corrente com saldo de: R$"+ getSaldoCP());
+       space();
+       System.out.println("Você possui duas contas:\nConta Corrente com saldo de: R$"+ getSaldoCC() + "\nConta Poupança com saldo de: R$"+ getSaldoCP());
+       space();
+       space();
    }
 }
