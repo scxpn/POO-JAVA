@@ -18,16 +18,21 @@ public class Questao2 {
             switch (loop) {
                 case 1:
                     conta.cadastro();
+                    break;
                 case 2:
-                    
+                    conta.saque();
+                    break;
                 case 3:
-                    
+                    conta.deposito();
+                    break;
                 case 4:
-                    
+                    break;
                 case 5:
-                    
-                default:
-                    
+                    break;
+                case 6:
+                    loop = 6;
+                    break;
+
             }
         }
     }

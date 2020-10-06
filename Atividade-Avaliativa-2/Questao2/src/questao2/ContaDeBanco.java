@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class ContaDeBanco {
     private String nome, sobrenome, numeroConta;
     private int tipoConta;
-    private float saldoCP,saldoCC; //CP = Conta Poupança and CC = Conta Corrente
+    private float saldoCP,saldoCC, deposito, saque; //CP = Conta Poupança and CC = Conta Corrente
+    
     
     Scanner input = new Scanner(System.in);
     
@@ -36,7 +37,7 @@ public class ContaDeBanco {
         return tipoConta;
     }
     
-    public void setNumeroConta(int tipoConta){
+    public void setTipoConta(int tipoConta){
         this.tipoConta = tipoConta;
     }
     
@@ -86,6 +87,8 @@ public class ContaDeBanco {
        space();
        System.out.println("Informe seu nome: ");
        setNome(input.next());
+       System.out.println("Informe seu sobrenome: ");
+       setSobrenome(input.next());
        space();
        layout();
        System.out.println("Para facilitarmos seu acesso, usamos o sistema em que o seu CPF é seu numero da conta.");
@@ -94,7 +97,7 @@ public class ContaDeBanco {
        setNumeroConta(input.next());
        space();
        layout();
-       System.out.println("Bem vindo a familia JAVA Bank, sua conta foi gerada com as seguintes informações:\nNome: "+ getNome() + getSobrenome() + "\nConta: "+ getNumeroConta());
+       System.out.println("Bem vindo a familia JAVA Bank, sua conta foi gerada com as seguintes informações:\nNome: "+ getNome()+ " " + getSobrenome() + "\nConta: "+ getNumeroConta());
        space();
        setSaldoCC(100.00f);
        setSaldoCP(50.00f);
@@ -103,7 +106,76 @@ public class ContaDeBanco {
        space();
    }
    
+   
+   
    public void saque(){
-       System.out.println("Informe o valor do saque: ");
+       space();
+       layout();
+       System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\nEscolha de qual conta quer fazer o saque:");
+       setTipoConta(input.nextInt());
+       
+
+       switch(getTipoConta()){
+           case 1:
+               System.out.println("Informe o valor do saque: R$");
+               saque = input.nextFloat();
+               space();
+               if(getSaldoCC() > saque){
+
+                   setSaldoCC(getSaldoCC() - saque);
+                   System.out.println("Saque realizado com sucesso!");
+                   System.out.println("Seu saldo na Conta Corrente é de R$"+getSaldoCC());
+               }
+               
+               else{
+                   System.out.println("Você não pode realizar o saque de R$"+ saque+"\n Não permitimos saldo negativo em conta");
+                   
+               }
+               break;
+               
+           case 2:
+               System.out.println("Informe o valor do saque: R$");
+               saque = input.nextFloat();
+               if(getSaldoCP() > saque){
+                   setSaldoCC(getSaldoCP() - saque);
+                   System.out.println("Saque realizado com sucesso!");
+                   System.out.println("Seu saldo na Conta Poupança é de R$"+getSaldoCP());
+               }
+               
+               else{
+                   System.out.println("Você não pode realizar o saque de R$"+ saque+"\n Não permitimos saldo negativo em conta");
+               }
+               break;
+       }
+       space();
+       space();
+   }
+   
+   
+   public void deposito(){
+       space();
+       layout();
+       System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\nEscolha em qual conta quer fazer o deposito:");
+       setTipoConta(input.nextInt());
+       space();
+       
+       switch(getTipoConta()){
+           case 1:
+               System.out.println("Informe o valor do deposito: R$");
+               deposito = input.nextFloat();
+               setSaldoCC(getSaldoCC() + deposito);
+               System.out.println("Seu saldo agora é de R$" + getSaldoCC());
+               break;
+               
+           case 2:
+               System.out.println("Informe o valor do deposito: R$");
+               deposito = input.nextFloat();
+               setSaldoCP(getSaldoCP() + deposito);
+               System.out.println("Seu saldo agora é de R$" + getSaldoCP());
+               break;
+       }
+       
+       space();
+       space();
    }
 }
