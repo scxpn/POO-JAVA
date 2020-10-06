@@ -112,6 +112,7 @@ public class ContaDeBanco {
        space();
        layout();
        System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\nEscolha de qual conta quer fazer o saque:");
+       space();
        setTipoConta(input.nextInt());
        
 
@@ -156,6 +157,7 @@ public class ContaDeBanco {
        space();
        layout();
        System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\nEscolha em qual conta quer fazer o deposito:");
+       space();
        setTipoConta(input.nextInt());
        space();
        
