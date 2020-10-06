@@ -185,8 +185,23 @@ public class ContaDeBanco {
    public void consultaS(){
        space();
        layout();
-       System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\nEscolha de qual conta você quer o saldo: ");
+       System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\n3 - Todas as contas\nEscolha de qual conta você quer o saldo: ");
        setTipoConta(input.nextInt());
        space();
+       
+       switch(getTipoConta()){
+           case 1:
+               System.out.println("Seu saldo atual é de: R$"+ getSaldoCC());
+               break;
+               
+           case 2:
+               System.out.println("Seu saldo atual é de: R$"+ getSaldoCP());
+               break;
+               
+           case 3:
+               System.out.println("Seu saldo atual na Conta Corrente é de: "+getSaldoCC());
+               System.out.println("Seu saldo atual na Conta Corrente é de: "+getSaldoCP());
+               break;
+       }
    }
 }
