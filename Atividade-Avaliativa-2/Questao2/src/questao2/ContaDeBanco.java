@@ -66,6 +66,8 @@ public class ContaDeBanco {
         System.out.println("-----------------------------------------------------------------------------------");
     }
     
+   
+   //Opções principais
    public void menu(){
        layout();
        System.out.println("JAVA Bank");
@@ -112,8 +114,8 @@ public class ContaDeBanco {
        space();
        layout();
        System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\nEscolha de qual conta quer fazer o saque:");
-       space();
        setTipoConta(input.nextInt());
+       space();
        
 
        switch(getTipoConta()){
@@ -157,7 +159,6 @@ public class ContaDeBanco {
        space();
        layout();
        System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\nEscolha em qual conta quer fazer o deposito:");
-       space();
        setTipoConta(input.nextInt());
        space();
        
@@ -178,6 +179,14 @@ public class ContaDeBanco {
        }
        
        space();
+       space();
+   }
+   
+   public void consultaS(){
+       space();
+       layout();
+       System.out.println("Contas disponiveis:\n1 - Conta Corrente\n2 - Conta Poupança\nEscolha de qual conta você quer o saldo: ");
+       setTipoConta(input.nextInt());
        space();
    }
 }

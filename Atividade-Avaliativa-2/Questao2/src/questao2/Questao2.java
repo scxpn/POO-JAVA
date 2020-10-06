@@ -26,7 +26,7 @@ public class Questao2 {
                     conta.deposito();
                     break;
                 case 4:
-                    break;
+                    conta.consultaS();
                 case 5:
                     break;
                 case 6:
